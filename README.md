@@ -18,27 +18,22 @@ breakdowns
 
 ## Solution Overview
 
-PROPOSED SOLUTION
  The proposed system aims to Predictive maintenance (PdM) leverages real-time sensor data and machine learning models to anticipate machinery failures before they occur, enabling proactive interventions that minimize downtime 
 and reduce operational costs. This approach is increasingly feasible and valuable in industrial settings due to advances in IoT, sensor technology, and AI-based analytics. The solution will consist of the following components:
- Data Collection:
- Sensors: Collect data using sensors that monitor parameters such as vibration, temperature, pressure, humidity, current, and acoustic emissions.
+ * **Data Collection:**Sensors: Collect data using sensors that monitor parameters such as vibration, temperature, pressure, humidity, current, and acoustic emissions.
  Examples: Infrared thermal sensors (for heat), vibration sensors (for wear or imbalance), and microphones (for acoustic anomalies)
- Data Integration: Integrate data from various systems—sensors, maintenance logs, SCADA, and ERP platforms—into a central database
- Data Preprocessing:
- Clean and preprocess the collected data to handle missing values, outliers, and inconsistencies.
+ * **Data Integration:** Integrate data from various systems—sensors, maintenance logs, SCADA, and ERP platforms—into a central database
+ * **Data Preprocessing:** Clean and preprocess the collected data to handle missing values, outliers, and inconsistencies.
  Feature engineering to extract relevant features from the data that might impact bike demand.
- Machine Learning Algorithm:
+ * **Machine Learning Algorithm:**
  Implement a machine learning algorithm, to train a supervised learning classification model (such as Random Forest) on historical sensor data to learn patterns associated with different machinery failure types.
  Consider Use the trained model to predict the type of impending failure from new real-time sensor inputs, enabling proactive maintenance decisions
- Deployment:
- Real-time sensor data feeds the model, which predicts the likelihood and type of impending failure.
+ * **Deployment:** Real-time sensor data feeds the model, which predicts the likelihood and type of impending failure.
  If the given thresholds are crossed, the model sends alerts through maintenance management systems (CMMS/SCADA), enabling timely, targeted intervention
  Model retraining occurs periodically as new data is collected, ensuring accuracy and adaptability to changing machinery conditions
- Evaluation:
- Assess the model's performance using appropriate metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), or other relevant metrics.
+ * **Evaluation:** Assess the model's performance using appropriate metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), or other relevant metrics.
  Cross-validation ensures robustness against overfitting and generalization to unseen data
- Result:
+ * **Result:**
  Stage 1 (Failure Detection): The binary classifier effectively identifies whether a failure will occur, with strong performance metrics shown in the classification report.
  Stage 2 (Failure Type Classification): For actual failures, the model classifies specific failure types with decent accuracy using a multi-class classifier.
  Visualization: The confusion matrix reveals how well the model distinguishes between different failure types, highlighting areas of misclassification
@@ -49,9 +44,11 @@ and reduce operational costs. This approach is increasingly feasible and valuabl
 both binary and multi-class problems.  
 * **Data Input:**  Input data is loaded from predictive_maintenance.csv and includes sensor readings, machine types, and labeled failure types. 
  Categorical features are encoded, and irrelevant identifiers are dropped before modeling
-* **Training Process**  Data is split into training and testing sets using train_test_split with stratification. 
+* **Failure Label Handling:** The failure_type column, which indicates the cause of machine failure, was label-encoded to allow multi-class classification.
+* **Training Process:**  Data is split into training and testing sets using train_test_split with stratification. 
   Features are standardized using StandardScaler, and models are trained using RandomForestClassifier with default 
 parameters (100 estimators).
+* **Model Evaluation:** The trained model was evaluated using accuracy, precision, recall, and a confusion matrix. It achieved an accuracy of 92.4% (can be found within the IBM Watson Studio), indicating strong predictive capability. Feature importance analysis revealed which sensor readings were most indicative of potential failures.
 * **Prediction Process:** Stage 1 predicts whether a failure will occur using the binary model.
    If a failure is detected, Stage 2 predicts the type of failure using the multi-class model trained only on failed samples
 ## Data Source
@@ -83,7 +80,7 @@ This project was primarily developed and deployed on IBM Cloud. To understand or
 2.  **Provision Services:** Provision IBM Cloud Object Storage, IBM Watson Studio, and IBM Watson Machine Learning services.
 3.  **Create Project:** Set up a new project in IBM Watson Studio and link it to your Cloud Object Storage.
 4.  **Upload Data:** Upload `predictive_maintainance.csv` to your project's data assets.
-5.  **Open Jupyter Notebook**To write the python code so to run the experiment.
+5.  **Open Jupyter Notebook:** To write the python code so to run the experiment.
 6.  **Test Predictions:** The model accurately predicted machine failure types on unseen test data, demonstrating its ability to generalize from training. This confirms its effectiveness for real-time predictive maintenance in industrial settings.
 
 The `Predictive_Maintenance_Of_Industrial_Machinary.ipynb` provides the programmatic details of the generated model and can be run within a Watson Studio notebook environment.
