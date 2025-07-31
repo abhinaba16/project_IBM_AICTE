@@ -56,8 +56,8 @@ parameters (100 estimators).
    If a failure is detected, Stage 2 predicts the type of failure using the multi-class model trained only on failed samples
 ## Data Source
 * **Source:** kaggle
-* **Link:** [  https://www.kaggle.com/datasets/shivamb/machine
-predictive-maintenance-classification ]
+* **Link:** [https://www.kaggle.com/datasets/shivamb/machine
+predictive-maintenance-classification]
 * **File in this repository:** `predictive_maintainance.csv`
 
 **Note on Data Granularity:** The dataset has high granularity, meaning it captures detailed sensor readings at frequent time intervals. This allows the model to detect subtle patterns leading to different types of machine failures. Such fine-grained data improves prediction accuracy and enables early, specific maintenance actions.
