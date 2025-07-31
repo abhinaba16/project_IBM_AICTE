@@ -20,7 +20,7 @@ breakdowns
 
  The proposed system aims to Predictive maintenance (PdM) leverages real-time sensor data and machine learning models to anticipate machinery failures before they occur, enabling proactive interventions that minimize downtime 
 and reduce operational costs. This approach is increasingly feasible and valuable in industrial settings due to advances in IoT, sensor technology, and AI-based analytics. The solution will consist of the following components:
- * **Data Collection:**Sensors: Collect data using sensors that monitor parameters such as vibration, temperature, pressure, humidity, current, and acoustic emissions.
+ * **Data Collection:** Sensors: Collect data using sensors that monitor parameters such as vibration, temperature, pressure, humidity, current, and acoustic emissions.
  Examples: Infrared thermal sensors (for heat), vibration sensors (for wear or imbalance), and microphones (for acoustic anomalies)
  * **Data Integration:** Integrate data from various systems—sensors, maintenance logs, SCADA, and ERP platforms—into a central database
  * **Data Preprocessing:** Clean and preprocess the collected data to handle missing values, outliers, and inconsistencies.
