@@ -94,12 +94,10 @@ The Random Forest classifier demonstrated strong performance in predicting machi
 
 ## Future Enhancements
 
-* **Advanced Algorithms & Optimization:**  •Advanced Algorithms & Optimization:
-Future work can explore more sophisticated algorithms such as XGBoost, LightGBM, or deep learning models (e.g., 
+* **Advanced Algorithms & Optimization:** Future work can explore more sophisticated algorithms such as XGBoost, LightGBM, or deep learning models (e.g., 
 neural networks) to improve prediction accuracy, especially for imbalanced or complex datasets. Hyperparameter 
 tuning using techniques like Grid Search or Bayesian Optimization could further enhance model performance
-* **Real-Time Monitoring & Deployment:** •Real-Time Monitoring & Deployment:
-Integrating this predictive maintenance system with IoT-enabled industrial machinery can allow for real-time failure 
+* **Real-Time Monitoring & Deployment:** Integrating this predictive maintenance system with IoT-enabled industrial machinery can allow for real-time failure 
 detection and automatic alerts. Deploying the model using cloud platforms (AWS, Azure) or edge computing can help 
 monitor large-scale operations efficiently
 * **Explainability & Trust:** Incorporating tools like SHAP or LIME will make the model's decisions more transparent, enabling engineers to 
